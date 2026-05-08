@@ -1,31 +1,54 @@
 # Tsuzuru
 
-Tsuzuru is a VS Code extension for Tsuzuru scenario files.
+Language support for Tsuzuru scenario files in Visual Studio Code.
 
-This initial release provides syntax highlighting for `.tzr` files. LSP support and diagnostics are not provided yet.
+## Features
 
-Planned features include diagnostics, completion, hover, and go to definition.
+- Syntax highlighting for `.tzr` and `.TZR` files
+- Tsuzuru DSL v2 keyword highlighting
+- Basic editor configuration for comments, brackets, and indentation
+
+## Not included yet
+
+- LSP
+- Diagnostics
+- Completion
+- Hover
+- Go to definition
+- Formatter
+
+## Example
+
+```tzr
+title "Sample"
+
+character mio name="美緒"
+
+scene start:
+  bg station with fade(duration=300)
+  show mio_smile at center with dissolve(duration=250)
+
+  mio:
+    こんにちは。
+
+  choice "Start":
+    "はじめる" id=start:
+      jump main
+
+  end
+```
 
 ## Local Development
 
-Install dependencies:
-
 ```bash
 pnpm install
-```
-
-Compile the extension:
-
-```bash
+pnpm typecheck
 pnpm compile
+pnpm package
 ```
 
 Open this repository in VS Code and start the `Run Extension` launch configuration to open an Extension Development Host.
 
-Create a VSIX package:
+## License
 
-```bash
-pnpm package
-```
-
-Check syntax highlighting with `samples/syntax-highlight.tzr` in an Extension Development Host.
+MIT
