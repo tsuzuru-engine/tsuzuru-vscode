@@ -28,3 +28,4 @@ Create a VSIX package:
 pnpm package
 ```
 
+Check syntax highlighting with `samples/syntax-highlight.tzr` in an Extension Development Host.

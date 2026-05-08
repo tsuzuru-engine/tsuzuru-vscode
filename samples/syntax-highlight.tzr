@@ -1,0 +1,43 @@
+# Tsuzuru syntax highlight sample
+
+title "Syntax Highlight Test"
+
+character mio name="美緒"
+character ren name="蓮"
+
+include "./common.tzr"
+
+scene start:
+  bg station with fade(duration=300)
+  show mio_smile at center with dissolve(duration=250)
+
+  mio:
+    こんにちは。
+
+  narration:
+    放課後の駅前は少し騒がしかった。
+
+  choice "Start":
+    "はじめる" id=start:
+      jump main
+    "やめる" id=quit:
+      jump end_scene
+
+scene main:
+  set scenario.score = 1
+  add scenario.score += 1
+
+  if scenario.score >= 10:
+    jump good
+  elif scenario.score >= 5:
+    jump normal
+  else:
+    jump bad
+
+scene good:
+  voice mio_001
+  wait 250
+  clear sprites
+  clear bg
+  stopBgm
+  end

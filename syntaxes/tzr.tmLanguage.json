@@ -28,6 +28,9 @@
       "include": "#modifiers"
     },
     {
+      "include": "#variables"
+    },
+    {
       "include": "#builtins"
     },
     {
@@ -78,7 +81,7 @@
           "match": "^\\s*(scene)\\s+([A-Za-z_][A-Za-z0-9_.-]*)(\\s*:)",
           "captures": {
             "1": {
-              "name": "keyword.declaration.scene.tzr"
+              "name": "keyword.other.definition.tzr"
             },
             "2": {
               "name": "entity.name.section.scene.tzr"
@@ -97,13 +100,13 @@
           "match": "(id)\\s*(=)\\s*([A-Za-z_][A-Za-z0-9_.-]*)(\\s*:)",
           "captures": {
             "1": {
-              "name": "storage.modifier.id.tzr"
+              "name": "variable.parameter.tzr"
             },
             "2": {
               "name": "keyword.operator.assignment.tzr"
             },
             "3": {
-              "name": "entity.name.label.tzr"
+              "name": "string.unquoted.identifier.tzr"
             },
             "4": {
               "name": "punctuation.separator.colon.tzr"
@@ -116,10 +119,10 @@
       "patterns": [
         {
           "name": "meta.label.builtin.tzr",
-          "match": "^\\s*(narration)(\\s*:)",
+          "match": "^\\s*(narration|system)(\\s*:)",
           "captures": {
             "1": {
-              "name": "support.variable.language.tzr"
+              "name": "support.variable.builtin.tzr"
             },
             "2": {
               "name": "punctuation.separator.colon.tzr"
@@ -132,10 +135,10 @@
       "patterns": [
         {
           "name": "meta.label.line.tzr",
-          "match": "^\\s*(?!(?:title|character|include|scene|choice|if|elif|else|jump|end|bg|show|hide|clear|wait|voice|stopBgm|set|add|narration)\\b)([A-Za-z_][A-Za-z0-9_.-]*)(\\s*:)",
+          "match": "^\\s*(?!(?:title|character|include|scene|choice|if|elif|else|jump|end|bg|show|hide|clear|wait|voice|stopBgm|set|add|narration|scenario|system)\\b)([A-Za-z_][A-Za-z0-9_.-]*)(\\s*:)",
           "captures": {
             "1": {
-              "name": "entity.name.label.tzr"
+              "name": "entity.name.type.character.tzr"
             },
             "2": {
               "name": "punctuation.separator.colon.tzr"
@@ -147,7 +150,7 @@
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.declaration.tzr",
+          "name": "keyword.other.definition.tzr",
           "match": "\\b(title|character|include|scene)\\b"
         },
         {
@@ -155,11 +158,11 @@
           "match": "\\b(choice|if|elif|else|jump|end)\\b"
         },
         {
-          "name": "support.function.command.visual-audio.tzr",
+          "name": "support.function.command.tzr",
           "match": "\\b(bg|show|hide|clear|wait|voice|stopBgm)\\b"
         },
         {
-          "name": "support.function.command.state.tzr",
+          "name": "keyword.other.state.tzr",
           "match": "\\b(set|add)\\b"
         }
       ]
@@ -167,16 +170,39 @@
     "modifiers": {
       "patterns": [
         {
-          "name": "storage.modifier.tzr",
-          "match": "\\b(with|at|id|name)\\b"
+          "name": "keyword.other.modifier.tzr",
+          "match": "\\b(with|at)\\b"
+        },
+        {
+          "name": "variable.parameter.tzr",
+          "match": "\\b(id|name|duration)\\b"
         }
       ]
     },
     "builtins": {
       "patterns": [
         {
-          "name": "support.variable.language.tzr",
+          "name": "support.variable.builtin.tzr",
           "match": "\\b(narration|scenario|system)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "meta.variable.member.tzr",
+          "match": "\\b(scenario|system)(\\.)([A-Za-z_][A-Za-z0-9_]*)\\b",
+          "captures": {
+            "1": {
+              "name": "support.variable.builtin.tzr"
+            },
+            "2": {
+              "name": "punctuation.accessor.dot.tzr"
+            },
+            "3": {
+              "name": "variable.other.member.tzr"
+            }
+          }
         }
       ]
     },
