@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "publisher": "tsuzuru",
   "license": "MIT",
+  "packageManager": "pnpm@11.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/tsuzuru-engine/tsuzuru-vscode.git"
