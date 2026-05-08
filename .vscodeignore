@@ -1,0 +1,10 @@
+.vscode/**
+.codex/**
+.agents/**
+src/**
+node_modules/**
+*.vsix
+.gitignore
+pnpm-lock.yaml
+pnpm-workspace.yaml
+tsconfig.json
