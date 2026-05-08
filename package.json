@@ -2,7 +2,7 @@
   "name": "tsuzuru-vscode",
   "displayName": "Tsuzuru",
   "description": "Language support for Tsuzuru scenario files.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "tsuzuru",
   "license": "MIT",
   "packageManager": "pnpm@11.0.0",
@@ -32,7 +32,7 @@
       {
         "id": "tzr",
         "aliases": ["Tsuzuru", "tzr"],
-        "extensions": [".tzr", ".TZR"],
+        "extensions": [".tzr"],
         "configuration": "./language-configuration.json"
       }
     ],

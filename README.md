@@ -4,13 +4,13 @@ Language support for Tsuzuru scenario files in Visual Studio Code.
 
 ## Features
 
-- Syntax highlighting for `.tzr` and `.TZR` files
+- Syntax highlighting for `.tzr` files
 - Tsuzuru DSL v2 keyword highlighting
 - Basic editor configuration for comments, brackets, and indentation
 
 ## Usage
 
-Open a `.tzr` or `.TZR` file in Visual Studio Code. The extension automatically activates and applies Tsuzuru syntax highlighting.
+Open a `.tzr` file in Visual Studio Code. The extension automatically activates and applies Tsuzuru syntax highlighting.
 
 ## Not included yet
 
